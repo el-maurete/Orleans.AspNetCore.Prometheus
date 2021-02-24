@@ -1,22 +1,28 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
+        <TargetFrameworks>netstandard2.0;net5.0</TargetFrameworks>
         <PackageId>Orleans.AspNetCore.Prometheus</PackageId>
-        <Version>0.1.1</Version>
+        <Version>0.1.3</Version>
         <Authors>El Maurete</Authors>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Description>Export Prometheus metrics for Microsoft Orleans</Description>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <RepositoryUrl>https://github.com/el-maurete/Orleans.AspNetCore.Prometheus</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/el-maurete/Orleans.AspNetCore.Prometheus</PackageProjectUrl>
+        <PackageTags>orleans prometheus metrics</PackageTags>
+        <PackageIcon>logo.png</PackageIcon>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-        <PackageReference Include="Microsoft.Orleans.Core" Version="3.3.0" />
-        <PackageReference Include="Microsoft.Orleans.OrleansRuntime" Version="3.3.0" />
-        <PackageReference Include="Microsoft.Orleans.Server" Version="3.3.0" />
-        <PackageReference Include="Microsoft.Orleans.OrleansCodeGenerator.Build" Version="3.3.0">
-            <PrivateAssets>all</PrivateAssets>
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+        <PackageReference Include="Microsoft.Orleans.CodeGenerator.MSBuild" Version="3.4.1">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+        <PackageReference Include="Microsoft.Orleans.Core" Version="3.4.1" />
+        <PackageReference Include="Microsoft.Orleans.OrleansRuntime" Version="3.4.1" />
+        <PackageReference Include="Microsoft.Orleans.Server" Version="3.4.1" />
         <PackageReference Include="prometheus-net.AspNetCore" Version="4.1.1" />
     </ItemGroup>
 </Project>

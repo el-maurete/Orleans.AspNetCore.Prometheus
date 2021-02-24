@@ -21,8 +21,8 @@ namespace Demo.Orleans.AspNetCore.Prometheus
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseRouting();
-            app.UseOrleansDashboard(); // (optional) use nuget package 'OrleansDashboard'
             app.UseOrleansMetrics(); // ADD THIS - orleans metrics collection on demand
+            app.UseOrleansDashboardOffline();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapMetrics();
